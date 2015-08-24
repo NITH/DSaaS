@@ -4,7 +4,7 @@
 
 The integration_id is the identity of the data source (i.e., sensor) that provided the data points for the given interval (in this case, day (24 hours)).
 
-##date
+## date
 
 The date of the current measurement, used to query the database. The format of this does not matter as long as it is reflected in code.
 
