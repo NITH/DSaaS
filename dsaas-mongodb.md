@@ -43,3 +43,7 @@ The structure assumes that only one data point will be collected per minute per 
 
 This nesting can continue virtually forever to store more data points per (interval).
 
+The most important speed improvement comes from the fact that each _date_ is stored as a single document, and thus loads all data points for that date into memory when a single query is done. A weakness is that finding data for a range of dates is a very slow action – but this should generally only be done when querying data over a timeline.
+
+For the dashboard's use case, another very important optimization is the storage of the last value; the data structure does not provide any easy way of finding the newest value in the present interval (date) because. Another way to solve this problem could have been to save a reference to the actual last value, but this was not required for our use case.
+
